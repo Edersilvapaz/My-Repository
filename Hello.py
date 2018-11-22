@@ -30,7 +30,12 @@ class Window(Frame):
         print("exiting")
 
     def showImg(self):
-        print("showing image")
+        load = Image.open('image.png')
+        render = ImageTk.PhotoImage(load)
+
+        img = Label(self, image = render)
+        img.image = render
+        img.place(x=0,y=0)
 
 root = Tk()
 root.geometry("400x300")
